@@ -1,1 +1,26 @@
-<h1 class="font-bold text-2xl">TODO DDD Style</h1>
+<% if notice.present? %>
+  <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+    <%= notice %>
+  </p>
+<% end %>
+
+<div class="mt-4">
+  <%= form_with(model: @task, class: "mb-7") do |form| %>
+    <div class="mb-5">
+      <%= form.text_field :description, placeholder: "Add new task", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+      <%= form.submit "Save", class: "btn py-2 ml-2 bg-blue-600 text-white" %>
+    </div>
+  <% end %>
+</div>
+
+<div id="tasks">
+  <h1 class="font-bold text-lg mb-7">Tasks</h1>
+
+  <div class="px-5">
+    <% @tasks.each do |task| %>
+      <div class="block mb-2">
+        <%= task.description %>
+      </div>
+    <% end %>
+  </div>
+</div>
