@@ -1,0 +1,15 @@
+<div>
+  <h1 class="font-bold text-2xl mb-3">Editing Task</h1>
+
+  <div id="<%= dom_id @task %>">
+    <%= form_with(model: @task, class: "mb-7") do |form| %>
+      <div class="mb-5">
+        <%= form.text_field :description, placeholder: "Add new task", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+        <%= form.submit "Save", class: "btn py-2 ml-2 bg-blue-600 text-white" %>
+      </div>
+    <% end %>
+
+
+    <%= link_to "Never Mind", tasks_path, class: "btn mb-3 bg-gray-100" %>
+  </div>
+</div>
