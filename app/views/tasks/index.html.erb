@@ -19,7 +19,7 @@
   <div class="px-5" data-controller="tasks">
     <% @tasks.each do |task| %>
       <turbo-frame id="<%= dom_id task %>" class="block">
-        <%= form_with(model: task, class:"text-lg inline-block my-3 w-72") do |form| %>
+        <%= form_with(model: task, url: toggle_task_path(task), class:"text-lg inline-block my-3 w-72") do |form| %>
           <%= form.check_box :completed,
                              data: {
                                id: task.id,
